@@ -26,19 +26,34 @@ echo "--------------------------------------------------------------------------
     if ($nota1 <= 0) $nota1 = 0;
     if ($nota2 >= 10) $nota2 = 10;
     if ($nota2 <= 0) $nota2 = 0;
+
+    $notas[$i]["prova1"] = $nota1;
+    $notas[$i]["prova2"] = $nota2;
+    
    }
+
+   $mediaGeral = 0;
+   foreach ($notas as $nota) {
+       $mediaGeral += $notas['prova1'] + $notas['prova2'];
+   }
+   $media = $mediaGeral / ($qtdalunos*2);
    
-   $medianotas = $qtdalunos 
-   $mediageral = 
+   
+   $mediaAlunos = 0;
+   foreach ($notas as $nota) {
+       $mediaAlunos += $notas['prova1'] + $notas['prova2'];
+       $mediaA = $mediaAlunos / 2;
+   }
+   $final = $mediaA / $qtdalunos;
+
    echo "-------------------------------------------------------------------------------".PHP_EOL;
-   echo "|Turma: $turma";
+   echo "|Turma: $turma".PHP_EOL;
    echo "-------------------------------------------------------------------------------".PHP_EOL;
-   echo "|Média de todas as notas:";
+   echo "|Média de todas as notas: $mediaGeral".PHP_EOL;
    echo "-------------------------------------------------------------------------------".PHP_EOL;
-   echo "|Média de todas as médias:";
+   echo "|Média de todas as médias: $final".PHP_EOL;
    echo "-------------------------------------------------------------------------------".PHP_EOL;
-   echo "|                               MÉDIA DOS ALUNOS                              |";
+   echo "|                               MÉDIA DOS ALUNOS                              |".PHP_EOL;
    echo "-------------------------------------------------------------------------------".PHP_EOL;
 
-
-  
+   
